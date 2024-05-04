@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import styles from './Dashboard.module.css';
 import { getServers } from '../services/serverService';
+import HyperTerminal from '../hyper-react-plugin/HyperTerminal';
 
 function Dashboard() {
   const [selectedServer, setSelectedServer] = useState(null);
@@ -38,6 +39,9 @@ function Dashboard() {
             <p>IP Address: {selectedServer.ip}</p>
           </div>
         )}
+        <div className={styles.terminal}>
+          <HyperTerminal />
+        </div>
       </main>
     </div>
   );
